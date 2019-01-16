@@ -1,0 +1,38 @@
+@startuml BlackJack Class Diagram
+Together {
+    Abstract class Member {
+        # Card hand[7]
+        # Score score
+        # DrawCard()
+        # CalculateScore()
+    }
+    Class Player {
+        - StopDrawing()
+    }
+    Class Dealer {
+        - DealCards()
+        - ShuffleStock()
+        - TurnUpHand()
+    }
+}
+Together {
+    Class Card {
+        Suit suit
+        Number Number
+        bool isUp
+    }
+Class Stock {
+        Card card[52]
+        ShuffleStock()
+    }
+}
+
+Member <|-- Player
+Member <|-- Dealer
+Member o-- Card
+
+Stock <-- Dealer
+Stock *-- Card
+Stock <-- Stock : Singleton
+
+@enduml
