@@ -115,7 +115,7 @@ method TurnUpHand(dealer: Dealer): bool =
 type
     Card = tuple
         suit: Suit
-        number: Number
+        number: CardNumber
         isUp: bool
 ```
 
@@ -152,14 +152,15 @@ mothod GetCard(stock: Stock): Card =
         Suit = enum
             Spades, Hearts, Clubs, Diamonds
     ```
-### 数字 Number
+### 数字 CardNumber
 - 値: A, 2, 3, ... , 10, J, Q, K
     ```
     type
-        Number = enum
-            (1, "A"), 2, 3, 4, 5, 6, 7, 8, 9,
-            10, (11, "J"), (12 "Q"), (13, "K")
-    ```
+        CardNumber = enum
+            ACE = 1, TWO, THREE, FOUR, FIVE,
+            SIX, SEVEN, EIGHT, NINE, TEN,
+            JACK, QUEEN, KING
+   ```
 
 # 非機能要件
 TBD
