@@ -1,0 +1,3 @@
+# nim
+
+Nim lang practice.
