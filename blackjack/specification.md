@@ -36,7 +36,10 @@
 
 # 機能要件
 ## ゲーム進行関数
-- 初期化
+- 初期化する
+    - ディーラーを1人生成する。
+    - プレイヤーを1人生成する。
+    - カードを1組生成する。
 - カードを切る
 - カードを配る
 - カードを引く（プレイヤー）
@@ -47,6 +50,7 @@
 
 ## メンバー
 ### メンバ
+- 名前
 - 手札
     - 型: Card
     - 要素数: 7
@@ -96,6 +100,10 @@ method ReceiveCard(player: Player): bool =
 - カードを表にする
 - 得点を計算する
 ```
+type
+    Dealer = ref object of Member
+        stock: Stock
+        
 method DealCards(dealer: Dealer, player: Player): bool = 
 
 method ShuffleStock(dealer: Dealer): bool =

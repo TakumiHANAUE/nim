@@ -1,18 +1,18 @@
 type
-    Score = range[0..30]
+    Score* = range[0..30]
 
 type
-    Suit = enum
+    Suit* = enum
         Spades, Hearts, Clubs, Diamonds
 
 type
-    CardNumber = enum
+    CardNumber* = enum
         ACE = 1, TWO, THREE, FOUR, FIVE,
         SIX, SEVEN, EIGHT, NINE, TEN,
         JACK, QUEEN, KING
 
 type
-    Card = tuple
+    Card* = tuple
         suit: Suit
         number: CardNumber
         isUp: bool
