@@ -1,6 +1,7 @@
 import methods
 
 proc Initialize(dealer: var Dealer, player: var Player, stock: var Stock): bool =
+    ## Initialize dealer, player and stock
     echo ">>> Initializing"
     
     dealer.Reset()
@@ -11,6 +12,9 @@ proc Initialize(dealer: var Dealer, player: var Player, stock: var Stock): bool 
     return result
 
 proc DealCards(dealer: var Dealer, player: var Player): bool =
+    ## deal initial two cards to player and dealer
+    ## calculate hand score
+    ## print hand on console
     echo ">>> Deal Cards"
 
     for i in 0..1:
@@ -27,6 +31,7 @@ proc DealCards(dealer: var Dealer, player: var Player): bool =
     return result
 
 proc DrawCard_Player(dealer: Dealer, player: var Player): bool =
+    ## player draws a card
     echo ">>> Draw Card (Player)"
     var ret: string
     while ((ret != "n") and (player.isBurst == false)):
@@ -45,6 +50,7 @@ proc DrawCard_Player(dealer: Dealer, player: var Player): bool =
         player.IsBurst()
 
 proc DrawCard_Dealer(dealer: var Dealer): bool =
+    ## dealer draws a card
     var ret: string
     echo ">>> Draw Card (Dealer)"
     echo "> Dealer turn a card up"
@@ -63,6 +69,8 @@ proc DrawCard_Dealer(dealer: var Dealer): bool =
     return result
 
 proc Judge(dealer: Dealer, player: Player): bool =
+    ## print out the result
+    echo ""
     echo ">>> Judgememt"
     dealer.PrintHands()
     player.PrintHands()
