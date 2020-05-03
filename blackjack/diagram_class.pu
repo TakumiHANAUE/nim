@@ -1,16 +1,22 @@
-@startuml BlackJack Class Diagram
+@startuml blackjack_class
 Together {
     Abstract class Member {
-        # Card hand[7]
+        # seq[Card] hand
         # Score score
-        # DrawCard()
+        # Reset()
         # CalculateScore()
+        # IsBurst()
+        # PrintHands()
+        - SuitToString()
+        - NumberToString()
     }
     Class Player {
-        - StopDrawing()
+        - ReceiveCard()
     }
     Class Dealer {
+        - GetStock()
         - DealCards()
+        - GetCard()
         - ShuffleStock()
         - TurnUpHand()
     }
@@ -22,14 +28,12 @@ Together {
         bool isUp
     }
 Class Stock {
-        Card card[52]
-        ShuffleStock()
+        seq[Card] card
     }
 }
 
 Member <|-- Player
 Member <|-- Dealer
-Member o-- Card
 
 Stock <-- Dealer
 Stock *-- Card

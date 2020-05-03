@@ -126,11 +126,6 @@ method PrintHands*(member: Member): void {.base.} =
 type
     Player* = ref object of Member
 
-method StopDrawing(player: Player): bool {.base.} =
-    ## Player stop card drawing.
-    echo "Turn end."
-    return true
-
 method ReceiveCard(player: Player, card: var Card): bool {.base.} =
     ## Player receive a card, and add it to player's hand.
     card.isUp = true

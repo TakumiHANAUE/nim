@@ -2,8 +2,6 @@ import typedefinition
 import methods
 include procedure
 
-import times
-
 echo "Welcome to Nim Blackjack !"
 
 var processRet: bool
